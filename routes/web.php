@@ -85,6 +85,4 @@ Route::group(['namespace' => 'App\Http\Controllers\User', 'prefix' => 'user', 'm
 
 
 
-
-
 require __DIR__.'/auth.php';

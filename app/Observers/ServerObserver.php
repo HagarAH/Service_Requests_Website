@@ -26,16 +26,16 @@ class ServerObserver
     public function updated(Server $server)
     {
 
-        if ($server->isDirty(['cpu_id', 'ram_id', 'disk_id', 'system_id', 'reason', 'description'])) {
-            $server->notification_id = 3;
+        if ($server->isDirty('cpu_id') || $server->isDirty('ram_id')|| $server->isDirty('system_id')|| $server->isDirty('disk_id')|| $server->isDirty('ic_ag')|| $server->isDirty('dis_ag')|| $server->isDirty('reason')|| $server->isDirty('description')|| $server->isDirty('kayit')) {
+            $server->notification_id=3;
         }
         if ($server->isDirty('comment')) {
-            $server->notification_id = 2;
+            $server->notification_id=2;
         }
         if ($server->isDirty('status_id')) {
-            $server->notification_id = 4;
+            $server->notification_id=4;
         }
-        $server->save();
+        $server->updateQuietly();
 
     }
 

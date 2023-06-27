@@ -33,7 +33,7 @@ class UpdateController extends Controller
         unset($data['ag']);
 
 
-        $server->update($data);
+        $server->updateOrFail($data);
 
         return redirect()->route('user.server.index');
 

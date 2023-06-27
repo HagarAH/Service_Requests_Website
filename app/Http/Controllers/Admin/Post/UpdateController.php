@@ -16,7 +16,9 @@ class UpdateController extends Controller
     public function __invoke(Request $request, $id)
     {
         $post = Post::findOrFail($id);
-        $post->update($request->only(['comment', 'status_id']));
+        $post->status_id=$request->status_id;
+        $post->comment=$request->comment;
+        $post->update();
         return redirect()->route('admin.post.index');
 
     }

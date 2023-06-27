@@ -1,12 +1,9 @@
-@extends('layouts.main')
+@extends('layouts.profileframe')
 
 
-@section('content')
-    <div class="page-content">
+@section('procontent')
 
-        <div class="d-flex justify-content-center">
-            <div class="col-xl-7">
-                <div id="panel-1" class="panel">
+
                     <div class="panel-container show">
                         <div class="panel-content">
                             <form class="pt-3">
@@ -81,9 +78,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
+
 @endsection
 
 

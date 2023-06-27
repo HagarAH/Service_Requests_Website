@@ -30,9 +30,10 @@
                                                 class="select2 form-control w-100 select2-hidden-accessible"
                                                 id="single-default"
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
-                                            <optgroup data-select2-id="101">
+                                            <optgroup data-select2-id="101" >
                                                 @foreach($cpus as $cpu)
-                                                    <option {{ old('cpu_id') == $cpu->id ? 'selected' : '' }}
+                                                    <option {{ old('cpu_id') == $cpu->id ? 'selected' : '' }} title="Clock: {{$cpu->clock}}
+Core: {{$cpu->core}}"
                                                             value="{{ $cpu->id }}">{{ $cpu->name }}</option>
                                                 @endforeach
                                             </optgroup>
@@ -64,7 +65,10 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($rams as $ram)
-                                                    <option {{ old('ram_id') == $ram->id ? 'selected' : '' }}
+                                                    <option {{ old('ram_id') == $ram->id ? 'selected' : '' }}title="Clock Hızı: {{$ram->clock_speed}}
+Kapasite: {{$ram->capacity}}
+Bus Hızı: {{$ram->bus_speed}}
+Aktarma Hızı: {{$ram->transfer_rate}}"
                                                             value="{{$ram->id}}">{{$ram->name}}</option>
                                                 @endforeach
                                             </optgroup>
@@ -97,7 +101,10 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($disks as $disk)
-                                                    <option {{ old('disk_id') == $disk->id ? 'selected' : '' }}
+                                                    <option {{ old('disk_id') == $disk->id ? 'selected' : '' }} title="Teknoloji: {{$disk->technology}}
+Kapasite: {{$disk->capacity}}
+Okuma Hızı: {{$disk->read_speed}}
+Yazma Hızı: {{$disk->write_speed}}"
                                                             value="{{$disk->id}}">{{$disk->name}}</option>
                                                 @endforeach
                                             </optgroup>
@@ -132,7 +139,8 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($systems as $system)
-                                                    <option {{ old('system_id') == $system->id ? 'selected' : '' }}
+                                                    <option {{ old('system_id') == $system->id ? 'selected' : '' }}     title="Mimari: {{$system->architecture}}"
+
                                                             value="{{ $system->id }}">{{$system->name}}</option>
                                                 @endforeach
                                             </optgroup>
@@ -197,9 +205,7 @@
                                     <div class="form-group mt-2">
                                         <label class="form-label" for="example-textarea">Açıklama</label>
                                         <textarea name="description" class="form-control" id="example-textarea"
-                                                  rows="5">
-                                            {{ old('description') }}
-                                        </textarea>
+                                                  rows="5">{{ old('description') }}</textarea>
                                         @error('description')
                                         <p class="text-danger">{{ $message }}</p>
                                         @enderror
@@ -217,24 +223,6 @@
     </div>
 @endsection
 
-@section('style')
-    <style>
-        .mera {
-            display: none;
-            position: absolute;
-            color: #fff;
-            background: #000;
-            padding: 5px;
-        }
 
-        a#tooltip {
-            position: relative;
-        }
 
-        a#tooltip:hover .mera {
-            display: block;
-            text-align: center;
-        }
-    </style>
 
-@endsection

@@ -10,6 +10,12 @@ module.exports = {
 
     theme: {
         extend: {
+            colors: {
+                primary:'#121126',
+                secondary:'#26A646',
+
+
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },

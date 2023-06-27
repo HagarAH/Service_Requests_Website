@@ -9,8 +9,10 @@
 <link rel="mask-icon" href={{ asset('img/favicon/safari-pinned-tab.svg') }} color="#5bbad5">
 <link rel="stylesheet" media="screen, print" href={{ asset('css/datagrid/datatables/datatables.bundle.css') }}>
 <link rel="stylesheet" media="screen, print" href={{ asset('css/fa-solid.css') }}>
+<link rel="stylesheet" media="screen, print" href="css/page-login.css">
 
 <x-guest-layout>
+    <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 
     <form method="POST" action="{{ route('register') }}">
@@ -31,39 +33,38 @@
                 <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
                     <div action="intel_introduction.html">
                         <div class="form-group">
-                            <label class="form-label" for="username">Username</label>
+                            <label class="form-label" for="username">Kullanıcı Adı</label>
                             <input type="name" id="name" name="name" class="form-control"
                                    placeholder="Enter Username" required autofocus>
 
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
+                            <label class="form-label" for="email">E-posta</label>
                             <input type="name" id="name" name="email" class="form-control"
                                    placeholder="Enter email" required >
 
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
+                            <label class="form-label" for="password">Parola</label>
                             <input type="password" id="password" name="password" class="form-control"
                                    placeholder="Enter password" required>
 
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="password">Confirm Password</label>
+                            <label class="form-label" for="password">Parola Eşlemesi</label>
                             <input type="password" id="password_confirmation" name="password_confirmation" class="form-control"
                                    placeholder="password" required>
 
                         </div>
 
-                        <button type="submit" class="btn btn-default float-right waves-effect waves-themed">Resgister
-                        </button>
+                        <button type="submit" class="btn btn-primary float-right waves-effect waves-themed ">Kayıt ol</button>
                     </div>
                     <div class="flex items-center justify-end mt-2">
                         <a class="blankpage-footer text-center" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
+                                {{ __('Kayıtlı mısın?') }}
                         </a>
 
                     </div>

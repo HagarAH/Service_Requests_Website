@@ -1,16 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.profileedit')
 
 
-@section('content')
-    <div class="page-content">
-        <div class="d-flex justify-content-center">
-            <div class="row">
-                <div class="subheader">
-                    <h1 class="subheader-title">
-                        <i class='subheader-icon fal fa-edit'></i> Profil Bilgileri Güncelleme
-                    </h1>
-                </div>
-                <div id="panel-1" class="panel col-12">
+@section('proocontent')
+
 
 
                     <div class="panel-container show">
@@ -125,8 +117,5 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection

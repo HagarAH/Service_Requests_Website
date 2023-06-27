@@ -1,11 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.profileedit')
 
 
-@section('content')
-    <div class="page-content">
-        <div class="d-flex justify-content-center">
-            <div class="col-xl-7">
-                <div id="panel-1" class="panel">
+@section('proocontent')
+
                     <div class="panel-container show">
                         <div class="panel-content">
 
@@ -37,8 +34,6 @@
 
                                     </div>
                                 </div>
-
-
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <label class="form-label " for="simpleinput">Ad</label>
@@ -165,9 +160,7 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
 @endsection

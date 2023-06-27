@@ -31,7 +31,8 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($cpus as $cpu)
-                                                    <option {{ $cpu->id === $server->cpu_id ? 'selected' : ''}}
+                                                    <option {{ $cpu->id === $server->cpu_id ? 'selected' : ''}} title="Clock: {{$cpu->clock}}
+Core: {{$cpu->core}}"
                                                             value="{{ $cpu->id }}">{{ $cpu->name }}</option>
                                                 @endforeach
                                             </optgroup>
@@ -58,7 +59,10 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($rams as $ram)
-                                                    <option {{ $ram->id === $server->ram_id ? 'selected' : ''}}
+                                                    <option {{ $ram->id === $server->ram_id ? 'selected' : ''}} title="Clock Hızı: {{$ram->clock_speed}}
+Kapasite: {{$ram->capacity}}
+Bus Hızı: {{$ram->bus_speed}}
+Aktarma Hızı: {{$ram->transfer_rate}}"
                                                             value="{{$ram->id}}">{{$ram->name}}</option>
                                                 @endforeach
                                             </optgroup>
@@ -85,7 +89,10 @@
                                                 data-select2-id="single-default" tabindex="-1" aria-hidden="true">
                                             <optgroup data-select2-id="101">
                                                 @foreach($disks as $disk)
-                                                    <option {{ $disk->id === $server->disk_id ? 'selected' : ''}}
+                                                    <option {{ $disk->id === $server->disk_id ? 'selected' : ''}}  title="Teknoloji: {{$disk->technology}}
+Kapasite: {{$disk->capacity}}
+Okuma Hızı: {{$disk->read_speed}}
+Yazma Hızı: {{$disk->write_speed}}"
                                                             value="{{$disk->id}}">{{$disk->name}}</option>
                                                 @endforeach
                                             </optgroup>
@@ -113,7 +120,7 @@
                                             <optgroup data-select2-id="101">
                                                 @foreach($systems as $system)
                                                     <option {{ $system->id === $server->system_id ? 'selected' : ''}}
-                                                            value="{{ $system->id }}">{{$system->name}}</option>
+                                                            value="{{ $system->id }}"  title="Mimari: {{$system->architecture}}"   >{{$system->name}}</option>
                                                 @endforeach
                                             </optgroup>
                                         </select><span

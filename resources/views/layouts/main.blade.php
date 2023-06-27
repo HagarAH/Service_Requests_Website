@@ -540,7 +540,7 @@
 + datatables.styles.app.js
 + datatables.styles.buttons.app.js -->
 <script src="js/datagrid/datatables/datatables.bundle.js"></script>
-<!-- datatbles buttons bundle contains:
+<!-- datatables buttons bundle contains:
 + "jszip.js",
 + "pdfmake.js",
 + "vfs_fonts.js"

@@ -95,6 +95,9 @@
                             </div>
                         </div>
 
+
+
+
                     @endforeach
 
                 </div>
@@ -168,7 +171,7 @@
                                                                 <span>Kullanıcı talebini güncelledi</span>
 
                                                             @elseif($post->notification_id == 4)
-                                                                <span>Admin talebiniz üzerinde çalışıyor</span>}
+                                                                <span>Admin talebiniz üzerinde çalışıyor</span>
 
                                                             @endif
                                                         </div>

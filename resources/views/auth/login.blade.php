@@ -38,13 +38,13 @@
                     <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
                         <form action="intel_introduction.html">
                             <div class="form-group">
-                                <label class="form-label" for="username">Email</label>
+                                <label class="form-label" for="username">E-posta</label>
                                 <input type="email" id="email" name="email" class="form-control"
                                        placeholder="Enter email" :value="old('email')" required autofocus>
 
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="password">Password</label>
+                                <label class="form-label" for="password">Şifre</label>
                                 <input type="password" id="password" name="password" class="form-control"
                                        placeholder="password">
 
@@ -53,7 +53,7 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="remember_me"
                                            name="remember">
-                                    <label class="custom-control-label" for="rememberme"> Remember me </label>
+                                    <label class="custom-control-label" for="rememberme">Beni hatırla </label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary float-right waves-effect waves-themed ">Log in
@@ -62,8 +62,8 @@
                     </div>
                     @if (Route::has('password.request') && Route::has('register'))
                         <div class="blankpage-footer text-center">
-                            <a href="{{ route('password.request') }}"><strong>Recover Password</strong></a> | <a
-                                href="{{route('register')}}"><strong>Register Account</strong></a>
+                            <a href="{{route('register')}}"><strong>Kayıt Ol</strong></a> |
+                            <a href="{{route('password.request')}}"> <strong> Şifreni mi unuttun</strong></a>
                         </div>
                     @endif
 

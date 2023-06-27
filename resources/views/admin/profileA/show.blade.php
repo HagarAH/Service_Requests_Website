@@ -1,25 +1,21 @@
-@extends('layouts.main')
+@extends('layouts.profileframe')
 
 
-@section('content')
-    <div class="page-content">
-        <div class="d-flex justify-content-center">
-            <div class="row">
-                <div class="subheader">
-                    <h1 class="subheader-title">
-                        <i class='subheader-icon fal fa-id-card'></i> Profil Bilgilerim
-                    </h1>
-                </div>
-                <div id="panel-1" class="panel col-12">
+@section('procontent')
+
 
                     <div class="panel-container show">
                         <div class="panel-content">
                             <div class="panel-content">
                                 <form class="pt-3">
                                     <div class="form-row ">
-                                        <div class="position-absolute pos-top pos-right col-4 pt-4">
-                                            <img src="img/demo/avatars/avatar-admin-lg.png"
-                                                 class="rounded-circle shadow-2 img-thumbnail" alt="">
+                                        <div class="position-absolute pos-right pr-2  sm:rounded-lg">
+                                            <div class="d-flex justify-content-center my-n1">
+                                                <div
+                                                    class="profile-photo rounded-circle d-flex align-items-center justify-content-center">
+                                                    <p class="text-center">{{ substr(';', 0, 1) }}{{ substr('D)', 0, 1) }}</p>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4" class="form-label">Eposta</label>
@@ -38,7 +34,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="d-flex justify-content-end pt-2">
+                                    <div class="d-flex justify-content-end pt-6">
                                         <a type="button" href="{{route('profileA.edit',auth()->id())}}" class="btn btn-primary btn-pills waves-effect waves-themed">Güncelle</a>
                                     </div>
                                 </form>

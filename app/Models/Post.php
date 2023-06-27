@@ -12,8 +12,12 @@ class Post extends Model
 
 
     public $someProperty;
-    protected $table = 'posts';
     protected $guarded = [];
+    protected $fillable = [
+        'category_id',
+        'description',
+
+    ];
 
 
     public function category()

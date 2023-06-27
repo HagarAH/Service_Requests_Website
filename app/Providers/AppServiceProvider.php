@@ -34,5 +34,6 @@ class AppServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
         Post::observe(PostObserver::class);
         Server::observe(ServerObserver::class);
+
     }
 }

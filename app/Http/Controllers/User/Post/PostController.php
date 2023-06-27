@@ -4,10 +4,14 @@ namespace app\Http\Controllers\User\Post;
 
 use App\Http\Controllers\Controller;
 use app\Http\Controllers\User\Profile\ProfileController;
+use App\Http\Requests\PostUpdateRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Profile;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Database\Eloquent\Model;
 
 class PostController extends Controller
 {
@@ -98,16 +102,14 @@ class PostController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $data = \request()->validate([
-            'category_id' => 'required|string',
-            'description' => 'required|string',
-        ]);
-        $post = Post::find($id);
-        $post->update($data);
+    public function update(PostUpdateRequest $request, $id):
+RedirectResponse
 
-        return redirect()->route('Post.index');
+    { $post = Post::find($id);
+        $post->fill($request->validated());
+        $post->save();
+
+        return Redirect::route('Post.index');
     }
 
     /**

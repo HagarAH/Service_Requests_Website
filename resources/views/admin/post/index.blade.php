@@ -70,7 +70,7 @@
 
                 $.get('admin/posts/' + id + '/edit', function (data) {
                     bootbox.dialog({
-                        title: 'Edit Server',
+                        title: 'Edit Post',
                         message:
                             '<form action="admin/posts/' + id + '" method="post">' +
                             '<input type="hidden" name="_method" value="PATCH">' +

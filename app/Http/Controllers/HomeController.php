@@ -37,13 +37,11 @@ class HomeController extends Controller
             $servers = Server::whereIn('notification_id', [1, 3])->get();
 
 
-        } elseif (auth()->user()->role == 'user') {
-            $posts = Post::where('profile_id', $profile_id)
-                ->whereIn('notification_id', [4, 2])->get();
+        }  if (auth()->user()->role == 'user') {
+            $posts = Post::where('profile_id', $profile_id)->whereIn('notification_id', [4, 2])->get();
 
             $servers = Server::where('profile_id', $profile_id)
                 ->whereIn('notification_id', [4, 2])->get();
-
 
         }
 

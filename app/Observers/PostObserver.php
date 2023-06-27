@@ -26,18 +26,18 @@ class PostObserver
      */
     public function updated(Post $post)
     {
+
         if ($post->isDirty('category_id') || $post->isDirty('description')) {
-            $post->notification_id = 3;
+            $post->notification_id=3;
         }
-        if ($post->isDirty('comment')) {
-            $post->notification_id = 2;
+         if ($post->isDirty('comment')) {
+            $post->notification_id=2;
         }
-        if ($post->isDirty('status_id')) {
-            $post->notification_id = 4;
+         if ($post->isDirty('status_id')) {
+            $post->notification_id=4;
         }
+         $post->updateQuietly();
 
-
-        $post->save();
     }
 
     /**
@@ -73,3 +73,5 @@ class PostObserver
         //
     }
 }
+
+
